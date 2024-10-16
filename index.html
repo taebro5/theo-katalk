@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEO Promotion</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* PC와 모바일에서 각각 다른 이미지 맵을 사용 */
+        .pc-version {
+            display: none;
+        }
+
+        .mobile-version {
+            display: none;
+        }
+
+        @media screen and (min-width: 769px) {
+            .pc-version {
+                display: block;
+            }
+
+            .mobile-version {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc-version {
+                display: none;
+            }
+
+            .mobile-version {
+                display: block;
+            }
+        }
+    </style>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/jquery.rwdImageMaps.min.js"></script>
+        <script src="./js/ios-orientationchange-fix.min.js"></script>
+    
+</head>
+
+<body>
+    <!-- PC 버전 이미지 및 좌표 설정 -->
+    <img class="pc-version" src="teo pc.png" usemap="#pc-map" alt="PC Version Image">
+    <map name="pc-map">
+        <area target="_blank" alt="kakao" title="kakao" href="https://open.kakao.com/o/sBhivDUg" coords="1,0,2555,400" shape="rect">
+    <area target="_blank" alt="kakao2" title="kakao2" href="https://open.kakao.com/o/sBhivDUg" coords="653,1278,1017,1362" shape="rect">
+        <area target="_blank" alt="kakao3" title="kakao3" href="https://open.kakao.com/o/sBhivDUg" coords="1203,1623,439,1529" shape="rect">
+    </map>
+
+    <!-- 모바일 버전 이미지 및 좌표 설정 -->
+    <img class="mobile-version" src="teo mb.png" usemap="#mobile-map" alt="Mobile Version Image">
+    <map name="mobile-map">
+        <area target="_blank" alt="kakao" title="kakao" href="https://open.kakao.com/o/sBhivDUg" coords="135,26,971,727" shape="rect">
+    <area target="_blank" alt="kakao2" title="kakao2" href="https://open.kakao.com/o/sBhivDUg" coords="410,662,788,801" shape="rect">
+        <area target="_blank" alt="kakao3" title="kakao3" href="https://open.kakao.com/o/sBhivDUg" coords="411,1027,789,1166" shape="rect">
+    </map>
+
+    <!-- jQuery 및 반응형 이미지맵 플러그인 삽입 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+
+    <script>
+        // 반응형 이미지맵 플러그인 적용 및 디버깅 확인
+        $(document).ready(function() {
+            console.log("jQuery Loaded"); // 디버깅을 위한 메시지
+            $('img[usemap]').rwdImageMaps(); // 이미지맵 반응형 적용
+        });
+    </script>
+
+</body>
+
+</html>
